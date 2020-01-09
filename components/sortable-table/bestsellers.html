@@ -1,0 +1,17 @@
+<!doctype html>
+<body>
+<link rel="stylesheet" href="../../styles/common.css">
+<link rel="stylesheet" href="../productsTable/style.css">
+<link rel="stylesheet" href="../tooltip/style.css">
+<script type="module">
+  import ProductsTable from './bestsellers.js';
+
+  let table = new ProductsTable({
+    url: '/api/dashboard/bestsellers',
+    name: 'bestsellers'
+  });
+
+  document.body.appendChild(table.elem);
+</script>
+
+</body>

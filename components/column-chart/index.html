@@ -1,0 +1,24 @@
+<!doctype html>
+<body>
+<link rel="stylesheet" href="../../styles/common.css">
+<link rel="stylesheet" href="style.css">
+<script type="module">
+  import ColumnChart from './index.js';
+
+  let chart = new ColumnChart({
+    url: '/api/dashboard/orders',
+    height: 200,
+    range: {
+      from: new Date(Date.now() - 60*86400e3),
+      to: new Date()
+    },
+    name:   'orders',
+    title: "Orders",
+    link: '/orders',
+    formatHeading: data => Object.values(data).reduce((a, b) => a + b, 0),
+    formatTooltip: (date, value) => `${date}: ${value}`
+  });
+
+  document.body.appendChild(chart.elem);
+</script>
+</body>

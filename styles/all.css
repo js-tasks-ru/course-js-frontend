@@ -1,0 +1,10 @@
+@import url("common.css");
+@import url("form.css");
+@import url("../components/main/style.css");
+@import url("../components/range-picker/style.css");
+@import url("../components/column-chart/style.css");
+@import url("../components/tooltip/style.css");
+@import url("../components/sortable-table/style.css");
+@import url("../components/notification/style.css");
+@import url("../components/table-fields/style.css");
+@import url("../pages/dashboard/style.css");

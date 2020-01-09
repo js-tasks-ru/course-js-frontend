@@ -1,0 +1,166 @@
+<!doctype html>
+<body>
+<link rel="stylesheet" href="../../styles/common.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    background: var(--light-blue); padding: 100px; /* Just for test */
+    height: 120vh;
+  }
+</style>
+<script type="module">
+  import SortableTable from './index.js';
+
+  let table = new SortableTable({
+    url: '/api/rest/products?_embed=category,subcategory&_start=0&_end=10',
+    fieldsEnabled: ['images', 'subcategory.title','quantity','price','status']
+  });
+
+  document.body.appendChild(table.elem);
+</script>
+
+<div class="sortable-table sortable-table_loading">
+  <div class="sortable-table__header sortable-table__row">
+    <div class="sortable-table__cell">Image</div>
+    <div class="sortable-table__cell">
+      <span>Name</span>
+      <span class="sortable-table__sort-arrow">
+          <span class="sortable-table__sort-arrow_asc"></span>
+        </span>
+    </div>
+    <div class="sortable-table__cell">
+      <span>Category</span>
+      <span class="sortable-table__sort-arrow">
+          <span class="sortable-table__sort-arrow_desc"></span>
+        </span>
+    </div>
+    <div class="sortable-table__cell">Quantity</div>
+    <div class="sortable-table__cell">Price</div>
+    <div class="sortable-table__cell">Status</div>
+  </div>
+  <div class="sortable-table__body">
+    <div class="sortable-table__row">
+      <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+      <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+      <div class="sortable-table__cell">Digital Cameras</div>
+      <div class="sortable-table__cell">25</div>
+      <div class="sortable-table__cell">2000</div>
+      <div class="sortable-table__cell">Enabled</div>
+    </div>
+    <div class="sortable-table__row">
+      <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+      <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+      <div class="sortable-table__cell">Digital Cameras</div>
+      <div class="sortable-table__cell">25</div>
+      <div class="sortable-table__cell">2000</div>
+      <div class="sortable-table__cell">Enabled</div>
+    </div>
+    <div class="sortable-table__row">
+      <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+      <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+      <div class="sortable-table__cell">Digital Cameras</div>
+      <div class="sortable-table__cell">25</div>
+      <div class="sortable-table__cell">2000</div>
+      <div class="sortable-table__cell">Enabled</div>
+    </div>
+  </div>
+  <div class="loading-line"></div>
+</div>
+
+<div class="sortable-table">
+  <div class="sortable-table__header sortable-table__row">
+    <div class="sortable-table__cell">Image</div>
+    <div class="sortable-table__cell">
+      <span>Name</span>
+      <span class="sortable-table__sort-arrow">
+          <span class="sortable-table__sort-arrow_asc"></span>
+        </span>
+    </div>
+    <div class="sortable-table__cell">
+      <span>Category</span>
+      <span class="sortable-table__sort-arrow">
+          <span class="sortable-table__sort-arrow_desc"></span>
+        </span>
+    </div>
+    <div class="sortable-table__cell">Quantity</div>
+    <div class="sortable-table__cell">Price</div>
+    <div class="sortable-table__cell">Status</div>
+  </div>
+  <div class="sortable-table__row">
+    <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+    <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+    <div class="sortable-table__cell">Digital Cameras</div>
+    <div class="sortable-table__cell">25</div>
+    <div class="sortable-table__cell">2000</div>
+    <div class="sortable-table__cell">Enabled</div>
+  </div>
+  <div class="sortable-table__row">
+    <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+    <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+    <div class="sortable-table__cell">Digital Cameras</div>
+    <div class="sortable-table__cell">25</div>
+    <div class="sortable-table__cell">2000</div>
+    <div class="sortable-table__cell">Enabled</div>
+  </div>
+  <div class="sortable-table__row loading-line">
+    <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+    <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+    <div class="sortable-table__cell">Digital Cameras</div>
+    <div class="sortable-table__cell">25</div>
+    <div class="sortable-table__cell">2000</div>
+    <div class="sortable-table__cell">Enabled</div>
+  </div>
+</div>
+
+
+<div class="sortable-table is-empty">
+  <div class="sortable-table__header sortable-table__row">
+    <div class="sortable-table__cell">Image</div>
+    <div class="sortable-table__cell">
+      <span>Name</span>
+      <span class="sortable-table__sort-arrow">
+          <span class="sortable-table__sort-arrow_asc"></span>
+        </span>
+    </div>
+    <div class="sortable-table__cell">
+      <span>Category</span>
+      <span class="sortable-table__sort-arrow">
+          <span class="sortable-table__sort-arrow_desc"></span>
+        </span>
+    </div>
+    <div class="sortable-table__cell">Quantity</div>
+    <div class="sortable-table__cell">Price</div>
+    <div class="sortable-table__cell">Status</div>
+  </div>
+  <div class="sortable-table__body">
+    <div class="sortable-table__row">
+      <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+      <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+      <div class="sortable-table__cell">Digital Cameras</div>
+      <div class="sortable-table__cell">25</div>
+      <div class="sortable-table__cell">2000</div>
+      <div class="sortable-table__cell">Enabled</div>
+    </div>
+    <div class="sortable-table__row">
+      <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+      <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+      <div class="sortable-table__cell">Digital Cameras</div>
+      <div class="sortable-table__cell">25</div>
+      <div class="sortable-table__cell">2000</div>
+      <div class="sortable-table__cell">Enabled</div>
+    </div>
+    <div class="sortable-table__row">
+      <div class="sortable-table__cell"><img class="sortable-table__cell-img" alt="Image" src="/assets/images/product-img.svg"></div>
+      <div class="sortable-table__cell">Canon EOS 200D Digital SLR Camera</div>
+      <div class="sortable-table__cell">Digital Cameras</div>
+      <div class="sortable-table__cell">25</div>
+      <div class="sortable-table__cell">2000</div>
+      <div class="sortable-table__cell">Enabled</div>
+    </div>
+  </div>
+  <div class="sortable-table__empty">
+    <p>No products satisfies your filter criteria</p>
+    <button type="button" class="button-primary-outline">Reset all filters</button>
+  </div>
+</div>
+</body>

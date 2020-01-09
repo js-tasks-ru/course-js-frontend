@@ -1,0 +1,19 @@
+<!doctype html>
+<body>
+<link rel="stylesheet" href="../../styles/common.css">
+<link rel="stylesheet" href="../products-table/style.css">
+<link rel="stylesheet" href="../tooltip/style.css">
+<script type="module">
+  // TODO: question: what is the purpose of this file?
+  import ProductsTable from './list.js';
+
+  let table = new ProductsTable({
+    url: '/api/rest/products?_embed=category,subcategory',
+    isDynamic: true,
+    name: 'list'
+  });
+
+  document.body.appendChild(table.elem);
+</script>
+
+</body>

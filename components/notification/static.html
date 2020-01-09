@@ -1,0 +1,24 @@
+<!doctype html>
+<body>
+<link rel="stylesheet" href="../../styles/common.css">
+<link rel="stylesheet" href="style.css">
+
+<div id="notification" class="notification notification_success">
+  <div class="notification__content">content tooltip</div>
+</div>
+
+<!--<div class="notification notification_error" style="left: 75px; right: auto">-->
+  <!--<div class="notification__content">content tooltip 2</div>-->
+<!--</div>-->
+
+<button type="button" class="button">open</button>
+
+<script>
+  const notification = document.querySelector('.notification');
+
+  document.querySelector('.button').addEventListener('click', () => {
+    notification.classList.toggle('show');
+  });
+</script>
+
+</body>

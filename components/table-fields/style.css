@@ -1,0 +1,15 @@
+.sortable-table-image {
+  height: 40px;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid var(--grey-light);
+  border-radius: 2px;
+}
+
+.sortable-table-tooltip__category {
+  color: var(--grey);
+}
+
+.sortable-field-tooltip__subcategory {
+  color: var(--dark-blue);
+}
